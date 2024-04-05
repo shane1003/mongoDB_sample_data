@@ -12,7 +12,7 @@ def list_account(accounts) -> list:
 def individual_customer(customer) -> dict:
     return{
         "id": str(customer["_id"]),
-        "username": customer.get("username"),
+        "username": customer("username"),
         "name": customer["name"], 
         "address": customer["address"],
         "birthdate": customer["birthdate"],

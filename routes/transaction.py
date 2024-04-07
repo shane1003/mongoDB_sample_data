@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from bson import ObjectId
 from config.database import collection_transactions
-from schema.transaction import individual_transaction, list_transcation
+from models.schema.transaction import individual_transaction, list_transcation
 
 router = APIRouter()
 

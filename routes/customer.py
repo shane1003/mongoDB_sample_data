@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from bson import ObjectId
-from schema.custormer import list_customer, individual_customer
+from models.schema.custormer import list_customer, individual_customer
 from config.database import collection_customers
 
 router = APIRouter()

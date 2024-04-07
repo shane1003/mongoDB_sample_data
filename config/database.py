@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-client = MongoClient("MongoDB URI")
+client = MongoClient("MongoURI")
 
 db = client.sample_analytics
 

@@ -43,8 +43,3 @@ async def get_customer_by_id(id: str):
 async def get_transaction_by_id(id: str):
     transaction = individual_transaction(collection_transactions.find_one({"_id": ObjectId(id)}))
     return transaction
-
-# POST Request Method
-@router.post("/account/{id}")
-async def post_account(account: account):
-    collection_accounts.insert_one(dict(account))

@@ -1,6 +1,15 @@
 from fastapi import FastAPI
-from routes.route import router
+from routes.api import router
+from pymongo import MongoClient
 
-app = FastAPI()
+def get_application() -> FastAPI:
+    application = FastAPI()
+    application.include_router(router)
 
-app.include_router(router)
+    return application
+
+app = get_application()
+
+@app.get("/")
+async def root():
+    return {"message" : "MongoDB Sample Dataset - Sample_Analytics"}

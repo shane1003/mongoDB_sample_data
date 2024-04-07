@@ -4,9 +4,8 @@ import os
 
 load_dotenv()
 
-password = os.getenv("password")
-mongodb_URI = f"mongodb+srv://admin:{password}@cluster0.8ulfocx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-client = MongoClient(mongodb_URI)
+ATLAS_URI = os.getenv("ATLAS_URI")
+client = MongoClient(ATLAS_URI)
 
 db = client.sample_analytics
 

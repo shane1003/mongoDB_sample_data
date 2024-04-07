@@ -1,2 +1,2 @@
 # MongoDB Sample Data Control
-sample_analysis
+sample_analytics

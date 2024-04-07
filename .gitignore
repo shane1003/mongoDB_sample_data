@@ -1,1 +1,6 @@
-./config/.env
+/config/.env
+/__pycache__
+/config/__pycache__
+/models/__pycache__
+/routes/__pycache__
+/schema/__pycache__

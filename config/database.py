@@ -1,6 +1,12 @@
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 
-client = MongoClient("MongoURI")
+load_dotenv()
+
+password = os.getenv("password")
+mongodb_URI = f"mongodb+srv://admin:{password}@cluster0.8ulfocx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+client = MongoClient(mongodb_URI)
 
 db = client.sample_analytics
 

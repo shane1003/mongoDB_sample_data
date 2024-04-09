@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from typing import List
 from config.database import collection_accounts
 from models.schema.account import list_account, individual_account, insert_account, AccounInUpdate
 from models.domain.account import account
@@ -32,9 +33,13 @@ async def update_all_by_id(id: str):
 
     _id = ObjectId(id)
 
-    update_info = AccounInUpdate(account_id=1999999, limit=55555, products=["test0", "test1"]).model_dump()
+    #이 방식으로 하면 나머지 값이 없을 경우에 null로 치환됨.
+    #update_info = AccounInUpdate(account_id=1999999, limit=55555, products=["test0", "test1"]).model_dump()
 
-    collection_accounts.update_one({"_id" : _id}, {"$set" : update_info})
+    #collection_accounts.update_one({"_id" : _id}, {"$set" : {"limit" : 33333}}) 1개 만 바꾸기
+    #collection_accounts.update_one({"_id" : _id}, {"$set" : {"products" : ["test0"]}}) 배열 자체를 바꾸기
+    #collection_accounts.update_one({"_id" : _id}, {"$set" : {"products.0" : "test3"}}) index로 접근(dict의 key 값이 index임)
+
 
 #DELETE Method
 @router.delete("/{id}")
